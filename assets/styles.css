@@ -1,4 +1,71 @@
-.custom-list-item{
-    text-align: center;
+:root{
+    --button-bg-color: grey;
+    --button-color: white;
+    --button-foc-bg-color: lightblue;
+    --button-foc-color: black;
+    --forcast-items-bg: darkblue;
+    --forcast-items-color: white;
 }
 
+
+.custom-container{
+    box-sizing: border-box;
+    padding: 0 1%;
+    margin: 0% 3%;
+}
+
+.custom-list-item{
+    text-align: center;
+    border: none;
+}
+
+.custom-temp{
+    text-align: left;
+}
+
+.forcast{
+    display: flex;
+    justify-content: space-between;
+}
+
+.forcast-items{
+    height: 20vh;
+    width: 19%;
+    border: 2px solid black;
+    background-color: var(--forcast-items-bg);
+    color: var(--forcast-items-color);
+    font-weight: bolder;
+}
+
+.custom-button{
+    width: 100%;
+    background-color: var(--button-bg-color);
+    border: 2px solid black;
+    color: var(--button-color);
+}
+
+.custom-button:focus{
+    background-color: var(--button-foc-bg-color);
+    color: var(--button-foc-color);
+}
+
+.btn{
+    width: 100%;
+}
+
+.search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5%;
+    border-bottom: 2px solid grey;
+}
+
+.search-items{
+    margin: 2%;
+    width: 90%;
+}
+
+.custom-city{
+    border: 2px solid black;
+}
