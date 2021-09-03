@@ -15,6 +15,19 @@
 <body>
 
     <div class="custom-main-container">
+        <div class="themes">
+            <h2>Themes</h2>
+            <form action="submit">
+                <label for="Default">Default</label>
+                <input name="theme" id="Default" type="radio">
+
+                <label for="Dark">Dark</label>
+                <input name="theme" id="Dark" type="radio">
+
+                <!-- <label for="Custom">Custom</label>
+                <input name="theme" id="Custom" type="radio"> -->
+            </form>
+        </div>
         <div class="container">
             <div class="row col-12 page-header">
                 <h1 class="text-center">Weather Dashboard</h1>
@@ -26,7 +39,7 @@
                 <div class="col-md-2 col-lg-3">
                     <div class="search">
                         <h2 class="row search-items" >Search For A City</h2>
-                        <input id="search-input" class="input-group row search-items" type="text" placeholder="San Diego">
+                        <input id="search-input" class="input-group row search-items" type="text" placeholder="City">
                         <button id="search-button" class="btn btn-primary row search-items">Search</button>
                     </div>
                     <ul id="search-history" class="list-group">
@@ -38,12 +51,12 @@
 
                 <div id="dashboard" class="col-md-10 col-lg-9">
                     <div class="row  custom-city custom-dashboard-top">
-                        <h2 id="city-name">Atlanta</h2>
+                        <h2 id="city-name">City Name</h2>
                         <ul class="list-group list-group-flush custom-list">
-                            <li id="city-temp" class="list-group-item custom-list-item custom-temp">Temp</li>
-                            <li id="city-wind" class="list-group-item custom-list-item custom-temp">Wind</li>
-                            <li id="city-humidity" class="list-group-item custom-list-item custom-temp">Humidy</li>
-                            <li id="city-uv" class="list-group-item custom-list-item custom-temp">UV Index</li>
+                            <li id="city-temp" class="list-group-item custom-list-item custom-temp">Temp <span id="todayTemp"></span></li>
+                            <li id="city-wind" class="list-group-item custom-list-item custom-temp">Wind <span id="todayWind"></span></li>
+                            <li id="city-humidity" class="list-group-item custom-list-item custom-temp">Humidy <span id="todayHum"></span></li>
+                            <li id="city-uv" class="list-group-item custom-list-item custom-temp">UV Index <span id="todayUv"></span></li>
                         </ul>
                     </div>
                     <div class="dashboard-bottom">
@@ -52,37 +65,37 @@
                             <div id="5df-1" class="forcast-items forcast-mon">
                                 <h3>Monday</h3>
                                 <img class="icon"alt="">
-                                <p>Temp:</p>
-                                <p>Wind:</p>
-                                <p>Humidy:</p>
+                                <p>Temp: <span id="monTemp"></span></p>
+                                <p>Wind: <span id="monWind"></span></p>
+                                <p>Humidy: <span id="monHum"></span></p>
                             </div>
                             <div id="5df-2" class="forcast-items forcast-tues">
                                 <h3>Tuesday</h3>
                                 <img class="icon" alt="">
-                                <p>Temp:</p>
-                                <p>Wind:</p>
-                                <p>Humidy:</p>
+                                <p>Temp:  <span id="tuesTemp"></span></p>
+                                <p>Wind:  <span id="tuesWind"></span></p>
+                                <p>Humidy:  <span id="tuesHum"></span></p>
                             </div>
                             <div id="5df-3" class="forcast-items forcast-wed">
                                 <h3>Wednesday</h3>
                                 <img class="icon"  alt="">
-                                <p>Temp:</p>
-                                <p>Wind:</p>
-                                <p>Humidy:</p>
+                                <p>Temp: <span id="wedTemp"></span></p>
+                                <p>Wind: <span id="wedWind"></span></p>
+                                <p>Humidy: <span id="wedHum"></span></p>
                             </div>
                             <div id="5df-4" class="forcast-items forcast-thurs">
                                 <h3>Thursday</h3>
                                 <img class="icon"  alt="">
-                                <p>Temp:</p>
-                                <p>Wind:</p>
-                                <p>Humidy:</p>
+                                <p>Temp: <span id="thurTemp"></span></p>
+                                <p>Wind: <span id="thurWind"></span></p>
+                                <p>Humidy: <span id="thurHum"></span></p>
                             </div>
                             <div id="5df-5" class="forcast-items forcast-fri">
                                 <h3>Friday</h3>
                                 <img class="icon" alt="">
-                                <p>Temp:</p>
-                                <p>Wind:</p>
-                                <p>Humidy:</p>
+                                <p>Temp: <span id="friTemp"></span></p>
+                                <p>Wind <span id="friWind"></span>:</p>
+                                <p>Humidy: <span id="friHum"></span></p>
                             </div>
                         </div>
                     </div>

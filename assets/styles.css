@@ -25,6 +25,10 @@
     font-family: 'Rubik', sans-serif;
 }
 
+.themes{
+    text-align: center;
+}
+
 .text-align-right{
     text-align: right;
 }
@@ -90,6 +94,11 @@ body{
     background: transparent
 }
 
+.custom-temp span{
+    text-align: right;
+    float: right;
+}
+
 .forcast{
     display: flex;
     justify-content: space-between;
@@ -109,7 +118,11 @@ body{
     color: black;
     font-weight: bolder;
     font-size: 1.1em;
+}
 
+.forcast-items span{
+    text-align: center;
+    float: right;
 }
 
 .custom-button{
