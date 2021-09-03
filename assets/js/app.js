@@ -9,7 +9,7 @@ var $fiveDayForcast2 = $('#5df-2');
 var $fiveDayForcast3 = $('#5df-3');
 var $fiveDayForcast4 = $('#5df-4');
 var $fiveDayForcast5 = $('#5df-5');
-var $5DayForcastContainer = $('#5-day-forcast').children();
+var $5DayForcastContainer = $('#five-day-forecast-ctn').children();
 var $iconSelector = $('.icon');
 var $searchInput = $('#search-input');
 var $searchButton = $('#search-button');
@@ -30,9 +30,9 @@ function writeToDashboard(testCity){
         })
         .then(function(data){
             $cityName.text(data.name);
-            $cityTemp.text(data.main.temp);
-            $cityWind.text(data.wind.speed);
-            $cityHumidity.text(data.main.humidity);
+            $cityTemp.text("Temp: " + data.main.temp);
+            $cityWind.text("Wind(mph): " + data.wind.speed);
+            $cityHumidity.text("Humidity: " + data.main.humidity);
             return data;
         })
         .then(function(data){
@@ -51,7 +51,7 @@ function writeToDashboard(testCity){
             })
             .then(function(data){
                 console.log(data.daily);
-                $cityUV.text(data.current.uvi);
+                $cityUV.text("UV Index: " + data.current.uvi);
 
                 // console.log($5DayForcastContainer); 
 
@@ -61,12 +61,17 @@ function writeToDashboard(testCity){
                     console.log("the icon code is: " + iconcode);
                     var iconUrl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
+                    // var createSpan = document.createElement('span');
+                    // createSpan.innerText = "Temp: " + data.daily[index].temp.day;
+                    // createSpan.innerText = "Wind: " + data.daily[index].wind_speed;
+                    // createSpan.innerText = "Humidity: " + data.daily[index].humidity;
+
                     $iconSelector.attr('src', iconUrl);
                     console.log($iconSelector[index]);
                    
-                    dayEl.children[2].innerText = data.daily[index].temp.day;
-                    dayEl.children[3].innerText = data.daily[index].wind_speed;
-                    dayEl.children[4].innerText = data.daily[index].humidity;
+                    dayEl.children[2].innerText = "Temp: " + data.daily[index].temp.day;
+                    dayEl.children[3].innerText = "Wind: " + data.daily[index].wind_speed;
+                    dayEl.children[4].innerText = "Humidity: " + data.daily[index].humidity;
                 
                 })
             })

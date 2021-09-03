@@ -5,85 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,800;1,400&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="assets/styles.css">
 
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row col-12 page-header">
-            <h1 class="text-center">Weather Dashboard</h1>
-        </div>
-    </div>
 
-    <div class="custom-container">
-        <div class="row">
-            <div class="col-md-2 col-lg-3">
-                <div class="search">
-                    <h2 class="row search-items" >Search For A City</h2>
-                    <input id="search-input" class="input-group row search-items" type="text" placeholder="San Diego">
-                    <button id="search-button" class="btn btn-primary row search-items">Search</button>
-                </div>
-                <ul id="search-history" class="list-group">
-                    <!-- <li class="list-group-item custom-list-item "><button class="btn button-active custom-button">Dallas, Texas</button></li> -->
-
-                </ul>
+    <div class="custom-main-container">
+        <div class="container">
+            <div class="row col-12 page-header">
+                <h1 class="text-center">Weather Dashboard</h1>
             </div>
+        </div>
 
+        <div class="custom-container">
+            <div class="row">
+                <div class="col-md-2 col-lg-3">
+                    <div class="search">
+                        <h2 class="row search-items" >Search For A City</h2>
+                        <input id="search-input" class="input-group row search-items" type="text" placeholder="San Diego">
+                        <button id="search-button" class="btn btn-primary row search-items">Search</button>
+                    </div>
+                    <ul id="search-history" class="list-group">
+                        <!-- <li class="list-group-item custom-list-item "><button class="btn button-active custom-button">Dallas, Texas</button></li> -->
 
-            <div id="dashboard" class="col-md-10 col-lg-9">
-                <div class="row  custom-city">
-                    <h2 id="city-name">Atlanta</h2>
-                    <ul class="list-group list-group-flush">
-                        <li id="city-temp" class="list-group-item custom-list-item custom-temp">Temp</li>
-                        <li id="city-wind" class="list-group-item custom-list-item custom-temp">Wind</li>
-                        <li id="city-humidity" class="list-group-item custom-list-item custom-temp">Humidy</li>
-                        <li id="city-uv" class="list-group-item custom-list-item custom-temp">UV Index</li>
                     </ul>
                 </div>
 
-                <h2 class="row">5-Day Forcast</h2>
-                <div id="5-day-forcast" class="row forcast">
-                    <div id="5df-1" class="forcast-items forcast-mon">
-                        <h3>Monday</h3>
-                        <img class="icon"alt="">
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidy:</p>
-                    </div>
-                    <div id="5df-2" class="forcast-items forcast-tues">
-                        <h3>Tuesday</h3>
-                        <img class="icon" alt="">
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidy:</p>
-                    </div>
-                    <div id="5df-3" class="forcast-items forcast-wed">
-                        <h3>Wednesday</h3>
-                        <img class="icon"  alt="">
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidy:</p>
-                    </div>
-                    <div id="5df-4" class="forcast-items forcast-thurs">
-                        <h3>Thursday</h3>
-                        <img class="icon"  alt="">
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidy:</p>
-                    </div>
-                    <div id="5df-5" class="forcast-items forcast-fri">
-                        <h3>Friday</h3>
-                        <img class="icon" alt="">
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidy:</p>
-                    </div>
-                </div>
-                <div class="row testBtn">
-                <button id="testButton">This is a test</button>
-                </div>
 
+                <div id="dashboard" class="col-md-10 col-lg-9">
+                    <div class="row  custom-city custom-dashboard-top">
+                        <h2 id="city-name">Atlanta</h2>
+                        <ul class="list-group list-group-flush custom-list">
+                            <li id="city-temp" class="list-group-item custom-list-item custom-temp">Temp</li>
+                            <li id="city-wind" class="list-group-item custom-list-item custom-temp">Wind</li>
+                            <li id="city-humidity" class="list-group-item custom-list-item custom-temp">Humidy</li>
+                            <li id="city-uv" class="list-group-item custom-list-item custom-temp">UV Index</li>
+                        </ul>
+                    </div>
+                    <div class="dashboard-bottom">
+                        <h2 class="row" id="five-day-forecast">5-Day Forcast</h2>
+                        <div id="five-day-forecast-ctn" class="row forcast">
+                            <div id="5df-1" class="forcast-items forcast-mon">
+                                <h3>Monday</h3>
+                                <img class="icon"alt="">
+                                <p>Temp:</p>
+                                <p>Wind:</p>
+                                <p>Humidy:</p>
+                            </div>
+                            <div id="5df-2" class="forcast-items forcast-tues">
+                                <h3>Tuesday</h3>
+                                <img class="icon" alt="">
+                                <p>Temp:</p>
+                                <p>Wind:</p>
+                                <p>Humidy:</p>
+                            </div>
+                            <div id="5df-3" class="forcast-items forcast-wed">
+                                <h3>Wednesday</h3>
+                                <img class="icon"  alt="">
+                                <p>Temp:</p>
+                                <p>Wind:</p>
+                                <p>Humidy:</p>
+                            </div>
+                            <div id="5df-4" class="forcast-items forcast-thurs">
+                                <h3>Thursday</h3>
+                                <img class="icon"  alt="">
+                                <p>Temp:</p>
+                                <p>Wind:</p>
+                                <p>Humidy:</p>
+                            </div>
+                            <div id="5df-5" class="forcast-items forcast-fri">
+                                <h3>Friday</h3>
+                                <img class="icon" alt="">
+                                <p>Temp:</p>
+                                <p>Wind:</p>
+                                <p>Humidy:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
