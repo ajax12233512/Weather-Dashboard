@@ -51,7 +51,7 @@
 
                 <div id="dashboard" class="col-md-10 col-lg-9">
                     <div class="row  custom-city custom-dashboard-top">
-                        <h2 id="city-name">City Name</h2>
+                        <h2 id="city-name">City Name <span id="currentDate"></span> </h2>
                         <ul class="list-group list-group-flush custom-list">
                             <li id="city-temp" class="list-group-item custom-list-item custom-temp">Temp <span id="todayTemp"></span></li>
                             <li id="city-wind" class="list-group-item custom-list-item custom-temp">Wind <span id="todayWind"></span></li>
@@ -63,35 +63,35 @@
                         <h2 class="row" id="five-day-forecast">5-Day Forcast</h2>
                         <div id="five-day-forecast-ctn" class="row forcast">
                             <div id="5df-1" class="forcast-items forcast-mon">
-                                <h3>Monday</h3>
+                                <h3 id="day1">Monday</h3>
                                 <img class="icon"alt="">
                                 <p>Temp: <span id="monTemp"></span></p>
                                 <p>Wind: <span id="monWind"></span></p>
                                 <p>Humidy: <span id="monHum"></span></p>
                             </div>
                             <div id="5df-2" class="forcast-items forcast-tues">
-                                <h3>Tuesday</h3>
+                                <h3 id="day2">Tuesday</h3>
                                 <img class="icon" alt="">
                                 <p>Temp:  <span id="tuesTemp"></span></p>
                                 <p>Wind:  <span id="tuesWind"></span></p>
                                 <p>Humidy:  <span id="tuesHum"></span></p>
                             </div>
                             <div id="5df-3" class="forcast-items forcast-wed">
-                                <h3>Wednesday</h3>
+                                <h3 id="day3">Wednesday</h3>
                                 <img class="icon"  alt="">
                                 <p>Temp: <span id="wedTemp"></span></p>
                                 <p>Wind: <span id="wedWind"></span></p>
                                 <p>Humidy: <span id="wedHum"></span></p>
                             </div>
                             <div id="5df-4" class="forcast-items forcast-thurs">
-                                <h3>Thursday</h3>
+                                <h3 id="day4">Thursday</h3>
                                 <img class="icon"  alt="">
                                 <p>Temp: <span id="thurTemp"></span></p>
                                 <p>Wind: <span id="thurWind"></span></p>
                                 <p>Humidy: <span id="thurHum"></span></p>
                             </div>
                             <div id="5df-5" class="forcast-items forcast-fri">
-                                <h3>Friday</h3>
+                                <h3 id="day5">Friday</h3>
                                 <img class="icon" alt="">
                                 <p>Temp: <span id="friTemp"></span></p>
                                 <p>Wind <span id="friWind"></span>:</p>
@@ -103,6 +103,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script
 			  src="https://code.jquery.com/jquery-3.6.0.js"
 			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="

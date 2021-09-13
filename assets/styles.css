@@ -162,6 +162,10 @@ body{
     margin: 1%;
 }
 
+#currentDate{
+    font-size: .5em;
+    padding-left: 1em;
+}
 
 
 .custom-dashboard-top{

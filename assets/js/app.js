@@ -14,6 +14,30 @@ var $iconSelector = $('.icon');
 var $searchInput = $('#search-input');
 var $searchButton = $('#search-button');
 var testButton = document.getElementById('testButton');
+var currentDate = document.getElementById('currentDate');
+var day1 = document.getElementById('day1');
+var day2 = document.getElementById('day2');
+var day3 = document.getElementById('day3');
+var day4 = document.getElementById('day4');
+var day5 = document.getElementById('day5');
+
+var m = moment();
+var displayCurrentDate = m.format('ddd MMM DD YYYY');
+console.log(currentDate);
+
+currentDate.innerText = displayCurrentDate;
+currentDate.style.fontSize = '.5em';
+currentDate.style.paddingLeft = '1em';
+
+day1.innerText = m.add(1, 'days').format('ddd MMM DD');
+day2.innerText = m.add(1, 'days').format('ddd MMM DD');
+day3.innerText = m.add(1, 'days').format('ddd MMM DD');
+day4.innerText = m.add(1, 'days').format('ddd MMM DD');
+day5.innerText = m.add(1, 'days').format('ddd MMM DD');
+
+
+
+
 
 //error ceased when i wrapped the fetch in a function. Look into that 'does fetch need to be wrapped in functino to work?'
 function writeToDashboard(testCity){
@@ -30,7 +54,7 @@ function writeToDashboard(testCity){
         })
         .then(function(data){
             $cityName.text(data.name);
-
+            $cityName.append(currentDate);
             
 
             var tempEl = document.getElementById('todayTemp');
@@ -80,12 +104,7 @@ function writeToDashboard(testCity){
                     var tempSpanEl = dayEl.children[2].children[0];
                     var windSpanEl = dayEl.children[3].children[0];
                     var humiditySpanEl = dayEl.children[4].children[0];
-                    
-                    
-
-                    // var tempSpanEl = document.createElement('span');
-                    // var windSpanEl = document.createElement('span');
-                    // var humiditySpanEl = document.createElement('span');
+                    ''
                     
                     var tempSpan = Math.floor(data.daily[index].temp.day) + "F";
                     var windSpan = Math.floor(data.daily[index].wind_speed)+ "MPH";
