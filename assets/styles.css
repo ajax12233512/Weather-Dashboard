@@ -33,6 +33,36 @@
     text-align: right;
 }
 
+#autofill-list{
+    position: absolute;
+    bottom: 10;
+    z-index: 100;
+    width: 11.5%;
+    list-style: none;
+    padding: 0;
+    box-sizing: border-box;
+    margin-top: 7.5em;
+    overflow: visible;
+    background-color: rgba(255, 240, 240, 0.8);
+}
+
+#autofill-list ul{
+    position: relative;
+    margin-top: 4em;
+    top: 10;
+}
+
+#autofill-list ul li{
+    position: relative;
+    z-index: 100;
+    
+    /* list-style: none; */
+}
+
+#autofill-list li:hover{
+    background: #7a817f;
+}
+
 #five-day-forecast-ctn{
     background: var(--custom-dashboard-bg-color);
     border-radius: 2em;
@@ -73,7 +103,7 @@ h3{
 body{
     /* background-color: grey; */
     background: var(--custom-linear-gradient-2);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     height: 100vh;
 }
 
@@ -182,10 +212,11 @@ body{
     z-index: 2;
     backdrop-filter: blur(3rem);
     box-sizing: border-box;
-    margin: 7vh 7vw;
+    margin: 2% auto;
     padding: 2%;
     background: var(--custom-main-ctn-bg-color);
-
+    max-width: 60%;
+    
     /* border: 3px solid var(--main-container-brd-color); */
     border-radius: 2em;
     font-weight: bolder;
@@ -201,9 +232,34 @@ body{
     font-size: 2em;
 }
 
+
+
+body{
+    background-repeat: repeat;
+    height: 100vh;
+}
+
+@media only screen and (min-width: 2380px) {
+    #autofill-list{
+        margin-top: 5.5em;
+    }
+}
+
+@media only screen and (max-width: 1624px) {
+    #autofill-list{
+        margin-top: 7.5em;
+    }
+}
+
+@media only screen and (max-width: 1400px){
+    #autofill-list{
+        margin-top: 10em;
+    }
+}
+
 @media only screen and (max-width: 1320px) {
     body{
-        background-repeat: no-repeat;
+        background-repeat: repeat;
         height: 100vh;
     }
 

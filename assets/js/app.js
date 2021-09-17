@@ -20,6 +20,7 @@ var day2 = document.getElementById('day2');
 var day3 = document.getElementById('day3');
 var day4 = document.getElementById('day4');
 var day5 = document.getElementById('day5');
+var autofillList = document.getElementById('autofill-list');
 
 var m = moment();
 var displayCurrentDate = m.format('ddd MMM DD YYYY');
@@ -37,7 +38,42 @@ day5.innerText = m.add(1, 'days').format('ddd MMM DD');
 
 
 
+//Auto Fill Feature
+function autofill(){
+    autofillList.innerHTML = '';
 
+    var inputString = $searchInput.val();
+    console.log(inputString);
+
+    var requestCitiesUrl = `http://geodb-free-service.wirefreethought.com/v1/geo/cities?namePrefix=${inputString}`
+    fetch(requestCitiesUrl)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(response){
+            console.log(response.data);
+            response.data.forEach(function(element){
+                console.log(element.name);
+                var newItem = document.createElement('li');
+                newItem.innerText = element.name;
+                autofillList.appendChild(newItem);
+
+                newItem.addEventListener('click', function(target){
+                    $searchInput.val(target.explicitOriginalTarget.innerText);
+                    autofillList.innerHTML = '';
+                })
+
+            })            
+        })
+
+    if(inputString === '')
+        autofillList.style.display = 'none';
+    else
+        autofillList.style.display = 'block';
+
+}       
+
+$searchInput.on('keyup', autofill);
 
 //error ceased when i wrapped the fetch in a function. Look into that 'does fetch need to be wrapped in functino to work?'
 function writeToDashboard(testCity){
@@ -98,9 +134,11 @@ function writeToDashboard(testCity){
                 $5DayForcastContainer.each( function( index ) {
                     var dayEl = $5DayForcastContainer[index];
                     var iconcode = data.daily[index].weather[0].icon;
+                    console.log(data.daily[index].weather[0]);
+                    console.log(iconcode);
 
                     var iconUrl = "http://openweathermap.org/img/w/" + iconcode + ".png";
-
+                    console.log(iconUrl);
                     var tempSpanEl = dayEl.children[2].children[0];
                     var windSpanEl = dayEl.children[3].children[0];
                     var humiditySpanEl = dayEl.children[4].children[0];
@@ -114,8 +152,8 @@ function writeToDashboard(testCity){
                     windSpanEl.innerText = windSpan;
                     humiditySpanEl.innerText = humiditySpan;
 
-                    $iconSelector.attr('src', iconUrl);
-                    console.log($iconSelector[index]);
+                    $iconSelector[index].setAttribute('src', iconUrl);
+                    console.log($iconSelector);
                    
                     dayEl.children[2].innerText = "Temp: ";
                     dayEl.children[2].appendChild(tempSpanEl);
